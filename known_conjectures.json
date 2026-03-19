@@ -1,0 +1,72 @@
+{
+ 
+  "conjectures": [
+  {
+    "id": "Conjecture 0",
+    "name": "Riemann Hypothesis",
+    "statement": "All non-trivial zeros of the Riemann zeta function \\(\\zeta(s)\\) have real part equal to \\(\\frac{1}{2}\\), i.e., if \\(\\zeta(s) = 0\\) and \\(0 < \\text{Re}(s) < 1\\), then \\(\\text{Re}(s) = \\frac{1}{2}\\)."
+    }, 
+    {
+      "id": "Conjecture 1",
+      "name": "Twin Prime Conjecture",
+      "statement": "There exist infinitely many primes p such that p + 2 is also prime, i.e., \\( \\#\\{p \\text{ prime} : p+2 \\text{ prime}\\} = \\infty \\)."
+    },
+    {
+      "id": "Conjecture 2",
+      "name": "Hardy–Littlewood Prime k-tuples Conjecture",
+      "statement": "For an admissible k-tuple \\(\\{h_1, h_2, ..., h_k\\}\\), the number of integers n ≤ x such that n+h_1, ..., n+h_k are all prime is asymptotically \\( \\sim \\mathfrak{S}(h_1,...,h_k) \\int_2^x \\frac{dt}{(\\log t)^k} \\), where \\(\\mathfrak{S}\\) is the singular series."
+    },
+    {
+      "id": "Conjecture 3",
+      "name": "Elliott–Halberstam Conjecture",
+      "statement": "For any \\( \\theta < 1 \\), \\( \\sum_{q \\le x^\\theta} \\max_{(a,q)=1} | \\pi(x; q,a) - \\frac{\\text{li}(x)}{\\phi(q)} | \\ll x / (\\log x)^A \\) for all A > 0."
+    },
+    {
+      "id": "Conjecture 4",
+      "name": "Generalized Elliott–Halberstam Conjecture",
+      "statement": "Let \\(\\Lambda(n)\\) be the von Mangoldt function. For any \\(\\theta < 1\\), \\( \\sum_{q \\le x^\\theta} \\max_{(a,q)=1} | \\sum_{n \\le x, n \\equiv a \\pmod q} \\Lambda(n) - x/\\phi(q) | \\ll x / (\\log x)^A \\) for all A > 0."
+    },
+    {
+      "id": "Conjecture 5",
+      "name": "Bateman–Horn Conjecture",
+      "statement": "For polynomials \\(f_1,...,f_k \\in \\mathbb{Z}[x]\\) with positive leading coefficients, the number of n ≤ x with all f_i(n) prime is asymptotically \\( \\sim \\frac{C}{\\prod_{i=1}^k \\deg f_i} \\int_2^x \\frac{dt}{(\\log t)^k} \\), where C is the product over primes of local densities."
+    },
+    {
+      "id": "Conjecture 6",
+      "name": "Dickson's Conjecture",
+      "statement": "If \\(\\{a_i n + b_i\\}_{i=1}^k\\) is an admissible set of linear forms, then there exist infinitely many n such that all \\(a_i n + b_i\\) are prime."
+    },
+    {
+      "id": "Conjecture 7",
+      "name": "Polignac's Conjecture",
+      "statement": "For every even number 2k, there exist infinitely many consecutive primes p_n, p_{n+1} such that p_{n+1} - p_n = 2k."
+    },
+    {
+  "id": "Conjecture 8",
+  "name": "Firoozbakht's Conjecture",
+  "statement": "The sequence \\( p_n^{1/n} \\) is strictly decreasing, where \\( p_n \\) denotes the \\( n \\)-th prime. Equivalently, \\( p_{n+1} < p_n^{1 + 1/n} \\) for all \\( n \\geq 1 \\), which implies \\( p_{n+1} - p_n < (\\log p_n)^2 - \\log p_n \\) for \\( n > 9 \\)."
+    },
+    {
+      "id": "Conjecture 9",
+      "name": "Granville's Refinement of Cramér's Conjecture",
+      "statement": "There exist infinitely many n such that \\( p_{n+1} - p_n \\ge (2e^{-\\gamma} + o(1)) \\log^2 p_n \\), where \\(\\gamma\\) is Euler–Mascheroni constant."
+    }
+  ],
+  "related_results": [
+    {
+      "name": "Barban–Davenport–Halberstam Theorem",
+      "type": "theorem",
+      "statement": "\\( \\sum_{q \\le Q} \\sum_{a \\bmod q} |\\pi(x;q,a) - \\pi(x)/\\phi(q)|^2 \\ll xQ \\log x \\)"
+    },
+    {
+      "name": "Bombieri–Vinogradov Theorem",
+      "type": "theorem",
+      "statement": "For Q ≤ x^{1/2 - ε}, \\( \\sum_{q \\le Q} \\max_{(a,q)=1} |\\pi(x;q,a) - \\pi(x)/\\phi(q)| \\ll x / (\\log x)^A \\) for any A>0."
+    },
+    {
+      "name": "Zhang–Maynard–Tao Bounded Gap Theorem",
+      "type": "theorem",
+      "statement": "There exists a constant H such that infinitely many pairs of primes p, p' satisfy 0 < |p - p'| ≤ H."
+    }
+  ]
+}

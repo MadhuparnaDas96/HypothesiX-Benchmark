@@ -1,0 +1,80 @@
+{
+  "Section 1": {
+    "title": "Conversation 1",
+    "Definition 1.1": "For a squarefree Q where 6 | Q, let UQ be the set of residues r (mod Q) such that both r and r + 2 are coprime to Q. The residue-pairing bound is: BQ(x) = ∑ r∈UQ min (π(x;Q, r), π(x;Q, r + 2)) where π(x;Q, a) is the count of primes p ≤ x with p ≡ a (mod Q).",
+    "Conjecture 1.1": "For all x ≥ 7 and any squarefree Q with 6 | Q: π2(x) ≪ BQ(x)",
+    "Conjecture 1.2": "Explicit Modulo 30 InstanceFor Q = 30, U30 = {11, 17, 29}. Thus, for x ≥ 7: π2(x) ≤ 2+min{π(x; 30, 11), π(x; 30, 13)}+min{π(x; 30, 17), π(x; 30, 19)}+min{π(x; 30, 29), π(x; 30, 1)}.",
+    "Conjecture 1.3": "(Monotone refinement). If Q1 | Q2 are both squarefree and divisible by 6, then for every x ≥ 7: BQ2(x) ≤ BQ1(x). This implies that as we refine the modular partition, the sum of modular minima is non-increasing.",
+    "Definition 1.2": "Writing aQ(r;x) := π(x;Q, r) for r ∈ UQ, one has the exact identity: BQ(x) = 1/2 ∑ r∈UQ (aQ(r;x) + aQ(r + 2;x) − |aQ(r;x) − aQ(r + 2;x)|).",
+    "Conjecture 1.4": "Another computationally sharp inequality is: π2(x) ≪ 1/2 SQ(x) − 1/2 VQ(x) where SQ(x) := ∑ r∈UQ (aQ(r;x)+aQ(r+2;x)) is the total mass in admissible classes and VQ(x) := ∑ r∈UQ |aQ(r;x) − aQ(r + 2;x)| is the summed class-discrepancy.",
+    "Conjecture 1.5": "A coarser π-only corollary replaces 1/2(aQ(r;x)+aQ(r+2;x)) by min(aQ(r;x), aQ(r+2;x)) ≤ 1/2(aQ(r;x) + aQ(r + 2;x)), eliminating explicit absolute values: π2(x) ≤ 2 + 1/2 (π(x) − ∑ a∈FQ π(x;Q, a) − cQ) where FQ := {a (mod Q) : gcd(a,Q) = 1 but gcd(a + 2, Q) ≠ 1} are forbidden start-classes and cQ removes the small primes dividing Q (explicit below per modulus).",
+    "Definition 1.3": "For Q1 | Q2, let the fiber FQ2→Q1(r1) := {r2 ∈ UQ2 : r2 ≡ r1 (mod Q1)}.",
+    "Conjecture 1.6": "If Q1 | Q2 are squarefree with 6 | Q1, then for all x ≥ 7: BQ2(x) ≤ ∑ r1∈UQ1 min (∑ r2∈F aQ2(r2;x), ∑ r2∈F aQ2(r2 + 2;x)) ≤ BQ1(x).",
+    "Conjecture 1.7": "(Exact fiber cancellation identity (Gap decomposition)). For each r1 ∈ UQ1, let L(r1;x) and R(r1;x) be the sums of the left and right counts in the fiber. The fiber’s cancellation deficit is: δr1(x) := 1/2 [ ∑ r2∈F |dr2(x)| − | ∑ r2∈F dr2(x) | ] ≥ 0 where dr2(x) = aQ2(r2;x) − aQ2(r2 + 2;x). The total gap splits as: BQ1(x) − BQ2(x) = ΦQ1←Q2(x) + ∑ r1∈UQ1 δr1(x) where Φ is the loss from residue classes that become forbidden modulo Q2.",
+    "Conjecture 1.8": "(Strict Drop). Fix squarefree Q and prime p ≥ 5 coprime to Q. There exists X0 such that for all x ≥ X0: BpQ(x) ≤ BQ(x) − 1 (SD).",
+    "Definition 1.4": "(general h-step tuples). We define: • Let h ∈ 2N and m ≥ 1. An h-step (m+ 1)-tuple is a set of primes {p, p+ h, . . . , p+mh}. • For a modulus Q ≥ 2 define the admissible starts U(h,m)Q := {r (mod Q) : gcd(r + jh,Q) = 1 for all j = 0, . . . ,m}. • For a residue-class prime count aQ(a;x) := π(x;Q, a) and a tuple-minimum over a fixed start r: M(h,m)Q(r;x) := min 0≤j≤m aQ(r + jh;x). • Define the modular minima bound: B(h,m)Q(x) := ∑ r∈U(h,m)Q M(h,m)Q(r;x).",
+    "Conjecture 1.9": "For all x ≥ 7: Nh,m(x) ≤ Ch,m(Q) + B(h,m)Q(x).",
+    "Conjecture 1.10": "(Example). Cousin primes (h=4), m=1 Q=6: admissible start r ≡ 1 (mod 6); end r + 4 ≡ 5 (mod 6). For x ≥ 7: π4(x) ≤ 1 + min{π(x; 6, 1), π(x; 6, 5)}. The constant 1 accounts for the exceptional pair (3, 7)."
+  },
+
+  "Section 2": {
+    "title": "Conversation 2",
+    "Definition 2.1": "Let π2(x) := #{p ≤ x−2 : p and p+2 are prime}. π4(x) := #{p ≤ x−4 : p and p+4 are prime}. π(x; q, a) is the count of primes ≤ x that are ≡ a (mod q).",
+    "Conjecture 2.1": "For all x ≥ 7: π2(x) + π4(x) ≤ π(x−4) + 2.",
+    "Conjecture 2.2": "There exist absolute constants c1, c2 > 0 and x0 such that for all x ≥ x0: c1 · (π(x;3,2) − π(x;3,1))/log x − x/(log x)3 ≤ π2(x) − π4(x) ≤ c2 · (π(x;3,2) − π(x;3,1))/log x + x/(log x)3.",
+    "Definition 2.2": "For even h ≥ 2, write πh(x) := #{p ≤ x−h : p and p+h are prime}. For modulus q ≥ 1 and residue a modulo q, let π(x; q, a) := #{p ≤ x : p prime, p ≡ a (mod q)} and ∆q(a;x) := π(x; q, a) − π(x)/ϕ(q). Define the admissibility mask Kq,h(a) := 1gcd(a(a+h),q)=1.",
+    "Conjecture 2.3": "Let r ≥ 3 be an odd prime. Then for all x ≥ 2r: ∑ j=1..r−1 π2j(x) ≤ (r − 2) · π(x − 2(r − 1)) + Or(1).",
+    "Conjecture 2.4": "Universal mod-q pair-bias inequality relating πh1(x) − πh2(x) to Rq;h1,h2(x) with error ≤ C(q,h1,h2)·x/(log x)3.",
+    "Conjecture 2.5": "Concrete specialization: For q multiple of 6, Rq;2,4(x) = (1/log x)(π(x;6,5) − π(x;6,1)).",
+    "Conjecture 2.6": "Exact Triad Identities linking B6,2(x), B6,4(x), B6,0(x) and Chebyshev bias terms.",
+    "Conjecture 2.7": "Elementary Start/End Class Caps and Aggregate Obstruction inequalities.",
+    "Conjecture 2.8": "Bias inequality: |π2(x) − π4(x) − (π(x;6,5) − π(x;6,1))/log x| ≤ C · x/(log x)3.",
+    "Definition 2.4": "Defines bias transform Bq,h(a;x), min-bias aggregator Fq;2,4(x), and small prime counts ωq(x).",
+    "Conjecture 2.9": "Fq;2,4(x) = (−ωq(x) + Tq(x)) / (2 · log x).",
+    "Conjecture 2.10": "Simple universal bounds and equality cases for Fq;2,4(x).",
+    "Definition 2.5": "Definitions of ∆q(a;x), masks Kq,2 and Kq,4, bias Bq,h(x), and prime divisor counts ωq(x).",
+    "Conjecture 2.11": "Relations between Sq(x), Dq(x), Bq,2(x), Bq,4(x).",
+    "Conjecture 2.12": "Ellipse law describing geometric relation between Bq,2 and Bq,4.",
+    "Conjecture 2.13": "Product identity 4Bq,2(x)Bq,4(x) = Sq(x)² − Dq(x)² and associated bounds.",
+    "Conjecture 2.14": "L1/L2 control inequalities for Dq(x).",
+    "Conjecture 2.15": "Bounds for |Bq,2(x)| + |Bq,4(x)| and related maxima/minima.",
+    "Conjecture 2.16": "Sign constraints and bracketing inequalities for Bq,2(x) and Bq,4(x)."
+  },
+
+  "Section 3": {
+    "title": "Conversation 3",
+    "Conjecture 3.1": "For all x ≥ 7: |π2(x) − π4(x)| ≤ |π(x;6,5) − π(x;6,1)|.",
+    "Definition 3.1": "Definitions of πh(x), residue r(h), Sh(x), weighted sets H2 and H4.",
+    "Conjecture 3.2": "Start-Normalized Mod-6 Parity Inequality bounding weighted normalized gap differences by C/log x.",
+    "Conjecture 3.3": "Special cases including twin vs cousin and symmetric gap families.",
+    "Definition 3.2": "Definitions for πh(x;q,a), fibers F5(q), F1(q), and aggregated counts Π2(x;q), Π4(x;q).",
+    "Conjecture 3.4": "Fibered Start-Normalized Twin–Cousin Near-Equality.",
+    "Conjecture 3.5": "Coarse unnormalized envelope: |Π2(x;q) − Π4(x;q)| ≤ |S5(x;q) − S1(x;q)| + 1.",
+    "Definition 3.3": "Definitions for tuples ∆, fibers Fr(∆;q), aggregated counts Π∆(x;q,r).",
+    "Conjecture 3.6": "Intra-family Fiber Balance for Sexy Pairs and Chains.",
+    "Conjecture 3.7": "Cross-family Coupling between complementary fiber orientations.",
+    "Conjecture 3.8": "Coarse Bias Envelopes for tuples."
+  },
+
+  "Section 4": {
+    "title": "Conversation 4",
+    "Definition 4.1": "Defines Π2(x), Π4(x), π(x;3,a), ∆pairs(x,y), ∆3(x,y), twin-prime constant C2, and λ(x).",
+    "Conjecture 4.1": "Twin-Cousin Linear Response in Short Intervals with bound |∆pairs(x,y) − λ(x)·∆3(x,y)| ≤ K·√y/(log x)2.",
+    "Conjecture 4.2": "Cumulative form: |Π2(t) − Π4(t) − (2C2/log t)(π(t;3,2) − π(t;3,1))| ≤ K·√t/(log t)2."
+  },
+
+  "Section 5": {
+    "title": "Conversation 5",
+    "Definition 5.1": "Defines π2(x), π4(x), semiprime count Q(x), and discrepancy ∆h(x).",
+    "Conjecture 5.1": "Self-normalized square-root law bounding |∆h(x)|.",
+    "Conjecture 5.2": "Semiprime control inequality |∆h(x)| ≤ C √(Q(x+h) − Q(x)).",
+    "Definition 5.2": "Interval definitions for π2(I), π4(I), residues Pr(I) modulo 12, and ratio R(I).",
+    "Conjecture 5.3": "Residue-ratio sandwich for twin vs cousin pairs.",
+    "Conjecture 5.4": "Robust form with universal distortion κ.",
+    "Conjecture 5.5": "Semiprime proxy variant using Qr(I).",
+    "Definition 5.3": "Modulus 30 setup with residue classes and start/target sets for gaps 2,4,6.",
+    "Conjecture 5.6": "Mod-30 ratio sandwiches for twin, cousin, sexy gaps.",
+    "Conjecture 5.7": "Semiprime proxy prime-free variant.",
+    "Conjecture 5.8": "Residue-shift ratio sandwich for k-almost primes."
+  }
+}
