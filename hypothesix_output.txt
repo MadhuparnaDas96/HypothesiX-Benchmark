@@ -1,0 +1,39 @@
+Reference set R  (n = 10)
+θ bounds: [1, 10] for all features
+
+  Name                                             θ₁  θ₂  θ₃  θ₄  θ₅  θ₆
+  ----------------------------------------------------------------------
+  Riemann Hypothesis                               10  10  10  10  10  10 ← ceiling
+  Twin Prime Conjecture                             7   9   8   8   6   4 ← ceiling
+  Hardy–Littlewood Prime k-tuples Conjecture        9  10   9   9   7   4 ← ceiling
+  Elliott–Halberstam Conjecture                     8   8   7   5   6   6
+  Generalized Elliott–Halberstam Conjecture         8   9   6   4   6   6
+  Bateman–Horn Conjecture                          10   9   7   9   6   5
+  Dickson's Conjecture                              8   7   8   8   6   4
+  Polignac's Conjecture                             6   7   8   9   6   4
+  Firoozbakht's Conjecture                          5   7   4   9   3   2
+  Granville's Refinement of Cramér's Conjecture     4   8   5   3   3   2
+
+
+=== REFERENCE RANKING (lowest d² = closest to cluster centre) ===
+
+  Rank         d²       Υ  Name
+  --------------------------------------------------------------
+  1        2.1365  1.0000  Twin Prime Conjecture ← ceiling
+  2        3.8991  0.8889  Elliott–Halberstam Conjecture
+  3        4.0988  0.7778  Polignac's Conjecture
+  4        4.7624  0.6667  Dickson's Conjecture
+  5        5.8155  0.5714  Hardy–Littlewood Prime k-tuples Conjecture ← ceiling
+  6        5.8261  0.4444  Bateman–Horn Conjecture
+  7        5.9684  0.3333  Granville's Refinement of Cramér's Conjecture
+  8        7.0901  0.2222  Firoozbakht's Conjecture
+  9        7.0926  0.1429  Riemann Hypothesis ← ceiling
+  10       7.3099  0.0000  Generalized Elliott–Halberstam Conjecture
+
+--- Calibration ---
+  ⚠ Υ(Riemann Hypothesis) = 0.1429
+  ✓ Υ(Twin Prime Conjecture) = 1.0000
+  ⚠ Υ(Hardy–Littlewood Prime k-tuples Conjecture) = 0.5714
+
+Embedding reference conjectures...
+Embedding 3 theorems as visual landmarks...

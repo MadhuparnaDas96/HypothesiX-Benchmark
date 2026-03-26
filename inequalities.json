@@ -1,80 +1,526 @@
 {
-  "Section 1": {
-    "title": "Conversation 1",
-    "Definition 1.1": "For a squarefree Q where 6 | Q, let UQ be the set of residues r (mod Q) such that both r and r + 2 are coprime to Q. The residue-pairing bound is: BQ(x) = ∑ r∈UQ min (π(x;Q, r), π(x;Q, r + 2)) where π(x;Q, a) is the count of primes p ≤ x with p ≡ a (mod Q).",
-    "Conjecture 1.1": "For all x ≥ 7 and any squarefree Q with 6 | Q: π2(x) ≪ BQ(x)",
-    "Conjecture 1.2": "Explicit Modulo 30 InstanceFor Q = 30, U30 = {11, 17, 29}. Thus, for x ≥ 7: π2(x) ≤ 2+min{π(x; 30, 11), π(x; 30, 13)}+min{π(x; 30, 17), π(x; 30, 19)}+min{π(x; 30, 29), π(x; 30, 1)}.",
-    "Conjecture 1.3": "(Monotone refinement). If Q1 | Q2 are both squarefree and divisible by 6, then for every x ≥ 7: BQ2(x) ≤ BQ1(x). This implies that as we refine the modular partition, the sum of modular minima is non-increasing.",
-    "Definition 1.2": "Writing aQ(r;x) := π(x;Q, r) for r ∈ UQ, one has the exact identity: BQ(x) = 1/2 ∑ r∈UQ (aQ(r;x) + aQ(r + 2;x) − |aQ(r;x) − aQ(r + 2;x)|).",
-    "Conjecture 1.4": "Another computationally sharp inequality is: π2(x) ≪ 1/2 SQ(x) − 1/2 VQ(x) where SQ(x) := ∑ r∈UQ (aQ(r;x)+aQ(r+2;x)) is the total mass in admissible classes and VQ(x) := ∑ r∈UQ |aQ(r;x) − aQ(r + 2;x)| is the summed class-discrepancy.",
-    "Conjecture 1.5": "A coarser π-only corollary replaces 1/2(aQ(r;x)+aQ(r+2;x)) by min(aQ(r;x), aQ(r+2;x)) ≤ 1/2(aQ(r;x) + aQ(r + 2;x)), eliminating explicit absolute values: π2(x) ≤ 2 + 1/2 (π(x) − ∑ a∈FQ π(x;Q, a) − cQ) where FQ := {a (mod Q) : gcd(a,Q) = 1 but gcd(a + 2, Q) ≠ 1} are forbidden start-classes and cQ removes the small primes dividing Q (explicit below per modulus).",
-    "Definition 1.3": "For Q1 | Q2, let the fiber FQ2→Q1(r1) := {r2 ∈ UQ2 : r2 ≡ r1 (mod Q1)}.",
-    "Conjecture 1.6": "If Q1 | Q2 are squarefree with 6 | Q1, then for all x ≥ 7: BQ2(x) ≤ ∑ r1∈UQ1 min (∑ r2∈F aQ2(r2;x), ∑ r2∈F aQ2(r2 + 2;x)) ≤ BQ1(x).",
-    "Conjecture 1.7": "(Exact fiber cancellation identity (Gap decomposition)). For each r1 ∈ UQ1, let L(r1;x) and R(r1;x) be the sums of the left and right counts in the fiber. The fiber’s cancellation deficit is: δr1(x) := 1/2 [ ∑ r2∈F |dr2(x)| − | ∑ r2∈F dr2(x) | ] ≥ 0 where dr2(x) = aQ2(r2;x) − aQ2(r2 + 2;x). The total gap splits as: BQ1(x) − BQ2(x) = ΦQ1←Q2(x) + ∑ r1∈UQ1 δr1(x) where Φ is the loss from residue classes that become forbidden modulo Q2.",
-    "Conjecture 1.8": "(Strict Drop). Fix squarefree Q and prime p ≥ 5 coprime to Q. There exists X0 such that for all x ≥ X0: BpQ(x) ≤ BQ(x) − 1 (SD).",
-    "Definition 1.4": "(general h-step tuples). We define: • Let h ∈ 2N and m ≥ 1. An h-step (m+ 1)-tuple is a set of primes {p, p+ h, . . . , p+mh}. • For a modulus Q ≥ 2 define the admissible starts U(h,m)Q := {r (mod Q) : gcd(r + jh,Q) = 1 for all j = 0, . . . ,m}. • For a residue-class prime count aQ(a;x) := π(x;Q, a) and a tuple-minimum over a fixed start r: M(h,m)Q(r;x) := min 0≤j≤m aQ(r + jh;x). • Define the modular minima bound: B(h,m)Q(x) := ∑ r∈U(h,m)Q M(h,m)Q(r;x).",
-    "Conjecture 1.9": "For all x ≥ 7: Nh,m(x) ≤ Ch,m(Q) + B(h,m)Q(x).",
-    "Conjecture 1.10": "(Example). Cousin primes (h=4), m=1 Q=6: admissible start r ≡ 1 (mod 6); end r + 4 ≡ 5 (mod 6). For x ≥ 7: π4(x) ≤ 1 + min{π(x; 6, 1), π(x; 6, 5)}. The constant 1 accounts for the exceptional pair (3, 7)."
-  },
-
-  "Section 2": {
-    "title": "Conversation 2",
-    "Definition 2.1": "Let π2(x) := #{p ≤ x−2 : p and p+2 are prime}. π4(x) := #{p ≤ x−4 : p and p+4 are prime}. π(x; q, a) is the count of primes ≤ x that are ≡ a (mod q).",
-    "Conjecture 2.1": "For all x ≥ 7: π2(x) + π4(x) ≤ π(x−4) + 2.",
-    "Conjecture 2.2": "There exist absolute constants c1, c2 > 0 and x0 such that for all x ≥ x0: c1 · (π(x;3,2) − π(x;3,1))/log x − x/(log x)3 ≤ π2(x) − π4(x) ≤ c2 · (π(x;3,2) − π(x;3,1))/log x + x/(log x)3.",
-    "Definition 2.2": "For even h ≥ 2, write πh(x) := #{p ≤ x−h : p and p+h are prime}. For modulus q ≥ 1 and residue a modulo q, let π(x; q, a) := #{p ≤ x : p prime, p ≡ a (mod q)} and ∆q(a;x) := π(x; q, a) − π(x)/ϕ(q). Define the admissibility mask Kq,h(a) := 1gcd(a(a+h),q)=1.",
-    "Conjecture 2.3": "Let r ≥ 3 be an odd prime. Then for all x ≥ 2r: ∑ j=1..r−1 π2j(x) ≤ (r − 2) · π(x − 2(r − 1)) + Or(1).",
-    "Conjecture 2.4": "Universal mod-q pair-bias inequality relating πh1(x) − πh2(x) to Rq;h1,h2(x) with error ≤ C(q,h1,h2)·x/(log x)3.",
-    "Conjecture 2.5": "Concrete specialization: For q multiple of 6, Rq;2,4(x) = (1/log x)(π(x;6,5) − π(x;6,1)).",
-    "Conjecture 2.6": "Exact Triad Identities linking B6,2(x), B6,4(x), B6,0(x) and Chebyshev bias terms.",
-    "Conjecture 2.7": "Elementary Start/End Class Caps and Aggregate Obstruction inequalities.",
-    "Conjecture 2.8": "Bias inequality: |π2(x) − π4(x) − (π(x;6,5) − π(x;6,1))/log x| ≤ C · x/(log x)3.",
-    "Definition 2.4": "Defines bias transform Bq,h(a;x), min-bias aggregator Fq;2,4(x), and small prime counts ωq(x).",
-    "Conjecture 2.9": "Fq;2,4(x) = (−ωq(x) + Tq(x)) / (2 · log x).",
-    "Conjecture 2.10": "Simple universal bounds and equality cases for Fq;2,4(x).",
-    "Definition 2.5": "Definitions of ∆q(a;x), masks Kq,2 and Kq,4, bias Bq,h(x), and prime divisor counts ωq(x).",
-    "Conjecture 2.11": "Relations between Sq(x), Dq(x), Bq,2(x), Bq,4(x).",
-    "Conjecture 2.12": "Ellipse law describing geometric relation between Bq,2 and Bq,4.",
-    "Conjecture 2.13": "Product identity 4Bq,2(x)Bq,4(x) = Sq(x)² − Dq(x)² and associated bounds.",
-    "Conjecture 2.14": "L1/L2 control inequalities for Dq(x).",
-    "Conjecture 2.15": "Bounds for |Bq,2(x)| + |Bq,4(x)| and related maxima/minima.",
-    "Conjecture 2.16": "Sign constraints and bracketing inequalities for Bq,2(x) and Bq,4(x)."
-  },
-
-  "Section 3": {
-    "title": "Conversation 3",
-    "Conjecture 3.1": "For all x ≥ 7: |π2(x) − π4(x)| ≤ |π(x;6,5) − π(x;6,1)|.",
-    "Definition 3.1": "Definitions of πh(x), residue r(h), Sh(x), weighted sets H2 and H4.",
-    "Conjecture 3.2": "Start-Normalized Mod-6 Parity Inequality bounding weighted normalized gap differences by C/log x.",
-    "Conjecture 3.3": "Special cases including twin vs cousin and symmetric gap families.",
-    "Definition 3.2": "Definitions for πh(x;q,a), fibers F5(q), F1(q), and aggregated counts Π2(x;q), Π4(x;q).",
-    "Conjecture 3.4": "Fibered Start-Normalized Twin–Cousin Near-Equality.",
-    "Conjecture 3.5": "Coarse unnormalized envelope: |Π2(x;q) − Π4(x;q)| ≤ |S5(x;q) − S1(x;q)| + 1.",
-    "Definition 3.3": "Definitions for tuples ∆, fibers Fr(∆;q), aggregated counts Π∆(x;q,r).",
-    "Conjecture 3.6": "Intra-family Fiber Balance for Sexy Pairs and Chains.",
-    "Conjecture 3.7": "Cross-family Coupling between complementary fiber orientations.",
-    "Conjecture 3.8": "Coarse Bias Envelopes for tuples."
-  },
-
-  "Section 4": {
-    "title": "Conversation 4",
-    "Definition 4.1": "Defines Π2(x), Π4(x), π(x;3,a), ∆pairs(x,y), ∆3(x,y), twin-prime constant C2, and λ(x).",
-    "Conjecture 4.1": "Twin-Cousin Linear Response in Short Intervals with bound |∆pairs(x,y) − λ(x)·∆3(x,y)| ≤ K·√y/(log x)2.",
-    "Conjecture 4.2": "Cumulative form: |Π2(t) − Π4(t) − (2C2/log t)(π(t;3,2) − π(t;3,1))| ≤ K·√t/(log t)2."
-  },
-
-  "Section 5": {
-    "title": "Conversation 5",
-    "Definition 5.1": "Defines π2(x), π4(x), semiprime count Q(x), and discrepancy ∆h(x).",
-    "Conjecture 5.1": "Self-normalized square-root law bounding |∆h(x)|.",
-    "Conjecture 5.2": "Semiprime control inequality |∆h(x)| ≤ C √(Q(x+h) − Q(x)).",
-    "Definition 5.2": "Interval definitions for π2(I), π4(I), residues Pr(I) modulo 12, and ratio R(I).",
-    "Conjecture 5.3": "Residue-ratio sandwich for twin vs cousin pairs.",
-    "Conjecture 5.4": "Robust form with universal distortion κ.",
-    "Conjecture 5.5": "Semiprime proxy variant using Qr(I).",
-    "Definition 5.3": "Modulus 30 setup with residue classes and start/target sets for gaps 2,4,6.",
-    "Conjecture 5.6": "Mod-30 ratio sandwiches for twin, cousin, sexy gaps.",
-    "Conjecture 5.7": "Semiprime proxy prime-free variant.",
-    "Conjecture 5.8": "Residue-shift ratio sandwich for k-almost primes."
+    "conversations": [
+      {
+        "id": "Conversation 1",
+        "total_conjectures": 10,
+        "incorrect_conjectures": 1,
+        "definitions": [
+          {
+            "id": "Definition 1.1",
+            "type": "Definition",
+            "objects": {
+              "U_Q": "set of residues r (mod Q) such that both r and r+2 are coprime to Q, for squarefree Q with 6|Q",
+              "B_Q(x)": "sum_{r in U_Q} min(pi(x;Q,r), pi(x;Q,r+2)), residue-pairing bound",
+              "pi(x;Q,a)": "count of primes p <= x with p equiv a (mod Q)"
+            }
+          },
+          {
+            "id": "Definition 1.2",
+            "type": "Definition",
+            "objects": {
+              "a_Q(r;x)": "pi(x;Q,r) for r in U_Q",
+              "B_Q(x)_identity": "B_Q(x) = (1/2) sum_{r in U_Q} (a_Q(r;x) + a_Q(r+2;x) - |a_Q(r;x) - a_Q(r+2;x)|)"
+            }
+          },
+          {
+            "id": "Definition 1.3",
+            "type": "Definition",
+            "objects": {
+              "F_{Q_2 -> Q_1}(r_1)": "{r_2 in U_{Q_2} : r_2 equiv r_1 (mod Q_1)}, fiber for Q_1 | Q_2"
+            }
+          },
+          {
+            "id": "Definition 1.4",
+            "type": "Definition",
+            "name": "general h-step tuples",
+            "objects": {
+              "h-step_(m+1)-tuple": "a set of primes {p, p+h, ..., p+mh} for h in 2N and m >= 1",
+              "U_Q^{(h,m)}": "{r (mod Q) : gcd(r+jh,Q)=1 for all j=0,...,m}, admissible starts for modulus Q >= 2",
+              "a_Q(a;x)": "pi(x;Q,a), residue-class prime count",
+              "M_Q^{(h,m)}(r;x)": "min_{0<=j<=m} a_Q(r+jh;x), tuple-minimum over fixed start r",
+              "B_Q^{(h,m)}(x)": "sum_{r in U_Q^{(h,m)}} M_Q^{(h,m)}(r;x), modular minima bound"
+            }
+          }
+        ],
+        "conjectures": [
+          {
+            "id": "Conjecture 1.1",
+            "type": "Conjecture",
+            "statement": "For all x >= 7 and any squarefree Q with 6|Q: pi_2(x) << B_Q(x)."
+          },
+          {
+            "id": "Conjecture 1.2",
+            "type": "Conjecture",
+            "name": "Explicit Modulo 30 Instance",
+            "statement": "For Q=30, U_30 = {11,17,29}. Thus, for x >= 7:\npi_2(x) <= 2 + min{pi(x;30,11), pi(x;30,13)} + min{pi(x;30,17), pi(x;30,19)} + min{pi(x;30,29), pi(x;30,1)}."
+          },
+          {
+            "id": "Conjecture 1.3",
+            "type": "Conjecture",
+            "name": "Monotone refinement",
+            "statement": "If Q_1 | Q_2 are both squarefree and divisible by 6, then for every x >= 7: B_{Q_2}(x) <= B_{Q_1}(x). This implies that as we refine the modular partition, the sum of modular minima is non-increasing."
+          },
+          {
+            "id": "Conjecture 1.4",
+            "type": "Conjecture",
+            "statement": "Another computationally sharp inequality is:\npi_2(x) << (1/2) S_Q(x) - (1/2) V_Q(x),\nwhere S_Q(x) := sum_{r in U_Q} (a_Q(r;x) + a_Q(r+2;x)) is the total mass in admissible classes and V_Q(x) := sum_{r in U_Q} |a_Q(r;x) - a_Q(r+2;x)| is the summed class-discrepancy."
+          },
+          {
+            "id": "Conjecture 1.5",
+            "type": "Conjecture",
+            "statement": "A coarser pi-only corollary replaces (1/2)(a_Q(r;x)+a_Q(r+2;x)) by min(a_Q(r;x),a_Q(r+2;x)) <= (1/2)(a_Q(r;x)+a_Q(r+2;x)), eliminating explicit absolute values:\npi_2(x) <= 2 + (1/2) (pi(x) - sum_{a in F_Q} pi(x;Q,a) - c_Q),\nwhere F_Q := {a (mod Q) : gcd(a,Q)=1 but gcd(a+2,Q) != 1} are forbidden start-classes and c_Q removes the small primes dividing Q."
+          },
+          {
+            "id": "Conjecture 1.6",
+            "type": "Conjecture",
+            "statement": "If Q_1 | Q_2 are squarefree with 6|Q_1, then for all x >= 7:\nB_{Q_2}(x) <= sum_{r_1 in U_{Q_1}} min(sum_{r_2 in F} a_{Q_2}(r_2;x), sum_{r_2 in F} a_{Q_2}(r_2+2;x)) <= B_{Q_1}(x),\nwhere F = F_{Q_2->Q_1}(r_1)."
+          },
+          {
+            "id": "Conjecture 1.7",
+            "type": "Conjecture",
+            "name": "Exact fiber cancellation identity (Gap decomposition)",
+            "statement": "For each r_1 in U_{Q_1}, let L(r_1;x) and R(r_1;x) be the sums of the left and right counts in the fiber. The fiber's cancellation deficit is:\ndelta_{r_1}(x) := (1/2) [sum_{r_2 in F} |d_{r_2}(x)| - |sum_{r_2 in F} d_{r_2}(x)|] >= 0,\nwhere d_{r_2}(x) = a_{Q_2}(r_2;x) - a_{Q_2}(r_2+2;x). The total gap splits as:\nB_{Q_1}(x) - B_{Q_2}(x) = Phi_{Q_1 <- Q_2}(x) + sum_{r_1 in U_{Q_1}} delta_{r_1}(x),\nwhere Phi is the loss from residue classes that become forbidden modulo Q_2."
+          },
+          {
+            "id": "Conjecture 1.8",
+            "type": "Conjecture",
+            "name": "Strict Drop",
+            "statement": "Fix squarefree Q and prime p >= 5 coprime to Q. There exists X_0 such that for all x >= X_0:\nB_{pQ}(x) <= B_Q(x) - 1 (SD).\nThis predicts a persistent strict drop along primorial refinement due to the emergence of forbidden residue families and fiber imbalances."
+          },
+          {
+            "id": "Conjecture 1.9",
+            "type": "Conjecture",
+            "statement": "For all x >= 7:\nN_{h,m}(x) <= C_{h,m}(Q) + B_Q^{(h,m)}(x) (*),\nwhere N_{h,m}(x) counts h-step (m+1)-tuples with p+mh <= x, and C_{h,m}(Q) is a small explicit constant accounting for tuples involving small primes dividing Q."
+          },
+          {
+            "id": "Conjecture 1.10",
+            "type": "Conjecture",
+            "name": "Example: Cousin primes (h=4), m=1",
+            "statement": "Q=6: admissible start r equiv 1 (mod 6); end r+4 equiv 5 (mod 6). For x >= 7:\npi_4(x) <= 1 + min{pi(x;6,1), pi(x;6,5)}.\nThe constant 1 accounts for the exceptional pair (3,7)."
+          }
+        ]
+      },
+      {
+        "id": "Conversation 2",
+        "total_conjectures": 16,
+        "incorrect_conjectures": 0,
+        "definitions": [
+          {
+            "id": "Definition 2.1",
+            "type": "Definition",
+            "objects": {
+              "pi_2(x)": "#{p <= x-2 : p and p+2 are prime}",
+              "pi_4(x)": "#{p <= x-4 : p and p+4 are prime}",
+              "pi(x;q,a)": "count of primes <= x that are equiv a (mod q)"
+            }
+          },
+          {
+            "id": "Definition 2.2",
+            "type": "Definition",
+            "objects": {
+              "pi_h(x)": "#{p <= x-h : p and p+h are prime} for even h >= 2",
+              "pi(x;q,a)": "#{p <= x : p prime, p equiv a (mod q)}",
+              "Delta_q(a;x)": "pi(x;q,a) - pi(x)/phi(q)",
+              "K_{q,h}(a)": "1_{gcd(a(a+h),q)=1}, admissibility mask",
+              "B_{q,h}(x)": "(1/log x) sum_{a (mod q)} K_{q,h}(a) * Delta_q(a;x), mod-q pair-bias transform for gap h",
+              "R_{q;h_1,h_2}(x)": "B_{q,h_1}(x) - B_{q,h_2}(x) = (1/log x) sum_{a (mod q)} (K_{q,h_1}(a) - K_{q,h_2}(a)) * Delta_q(a;x)"
+            }
+          },
+          {
+            "id": "Definition 2.3",
+            "type": "Definition",
+            "description": "For q=6:",
+            "objects": {
+              "pi_h(x)": "#{p <= x-h : p and p+h are prime} for even h >= 0, pi_0(x) = pi(x)",
+              "pi(x;6,a)": "#{p <= x prime : p equiv a (mod 6)}",
+              "Delta_6(a;x)": "pi(x;6,a) - pi(x)/phi(6) with phi(6)=2",
+              "omega_6(x)": "#{primes p <= x with p | 6} in {0,1,2}",
+              "K_{6,h}(a)": "1_{gcd(a(a+h),6)=1}; for h=0,2,4: K_{6,0}=1_{a in {1,5}}, K_{6,2}=1_{a=5}, K_{6,4}=1_{a=1}",
+              "B_{6,h}(x)": "(1/log x) * sum_{a (mod 6)} K_{6,h}(a) * Delta_6(a;x), bias transform"
+            }
+          },
+          {
+            "id": "Definition 2.4",
+            "type": "Definition",
+            "objects": {
+              "pi_h(x)": "#{p <= x-h : p and p+h are prime} for even h >= 0, pi_0(x) = pi(x)",
+              "pi(x;q,a)": "#{p <= x : p prime, p equiv a (mod q)}",
+              "Delta_q(a;x)": "pi(x;q,a) - pi(x)/phi(q)",
+              "K_{q,h}(a)": "1_{gcd(a(a+h),q)=1}, admissibility mask",
+              "B_{q,h}(a;x)": "(1/log x) * K_{q,h}(a) * Delta_q(a;x), residuewise bias transform",
+              "F_{q;2,4}(x)": "sum_{a (mod q)} min(B_{q,2}(a;x), B_{q,4}(a;x)), min-bias aggregator",
+              "omega_q(x)": "#{primes p <= x with p | q}"
+            }
+          },
+          {
+            "id": "Definition 2.5",
+            "type": "Definition",
+            "description": "For q squarefree, q equiv 0 (mod 6), x >= 7:",
+            "objects": {
+              "Delta_q(a;x)": "pi(x;q,a) - pi(x)/phi(q) for (a,q)=1; set 0 otherwise",
+              "K_{q,2}": "1 on reduced residues a equiv 5 (mod 6), else 0",
+              "K_{q,4}": "1 on reduced residues a equiv 1 (mod 6), else 0",
+              "B_{q,h}(x)": "(1/log x) sum_{a (mod q)} K_{q,h}(a) Delta_q(a;x)",
+              "omega_q(x)": "#{primes p <= x with p | q}",
+              "omega_q^{(1)}(x)": "count of prime divisors of q <= x that are equiv 1 (mod 6)",
+              "omega_q^{(5)}(x)": "count of prime divisors of q <= x that are equiv 5 (mod 6)"
+            }
+          }
+        ],
+        "basic_properties": {
+          "P1_Linearity": "B_{q,h}(x) is linear in the vector (Delta_q(a;x))_a, and R_{q;h_1,h_2} is linear in K-differences.",
+          "P2_Locality_CRT": "If q = prod p_i is squarefree, then K_{q,h}(a) = prod_i 1_{a not equiv 0,-h (mod p_i)} and B_{q,h} factors across primes dividing q.",
+          "P3_Stability_under_refinement": "If q|Q (both squarefree), then the pushforward of weights from modulo Q to modulo q preserves R in the sense that sum_{b equiv a (mod q)} (K_{Q,h_1}-K_{Q,h_2})(b) = (K_{q,h_1}-K_{q,h_2})(a).",
+          "P4_Twin_cousin_universality": "For any squarefree q equiv 0 (mod 6), identity (3) holds; thus the twin-cousin discrepancy depends only on the prime-race pi(x;6,5) vs. pi(x;6,1) at main bias scale.",
+          "P5_Scale": "Under standard distribution in AP on average, the error x/(log x)^3 is natural for sieve-based pair counts."
+        },
+        "conjectures": [
+          {
+            "id": "Conjecture 2.1",
+            "type": "Conjecture",
+            "name": "Structural inequality",
+            "statement": "For all x >= 7: pi_2(x) + pi_4(x) <= pi(x-4) + 2. This follows from the impossibility of prime triplets {p,p+2,p+4} beyond {3,5,7}."
+          },
+          {
+            "id": "Conjecture 2.2",
+            "type": "Conjecture",
+            "name": "Twin-cousin bias inequality",
+            "statement": "There exist absolute constants c_1, c_2 > 0 and x_0 such that for all x >= x_0:\nc_1 * (pi(x;3,2) - pi(x;3,1)) / log x - x/(log x)^3 <= pi_2(x) - pi_4(x) <= c_2 * (pi(x;3,2) - pi(x;3,1)) / log x + x/(log x)^3.\nIn particular, the set of x for which pi_2(x) > pi_4(x) has logarithmic density strictly larger than 1/2."
+          },
+          {
+            "id": "Conjecture 2.3",
+            "type": "Conjecture",
+            "name": "Structural obstruction inequality",
+            "statement": "Let r >= 3 be an odd prime. Then for all x >= 2r:\nsum_{j=1}^{r-1} pi_{2j}(x) <= (r-2) * pi(x-2(r-1)) + O_r(1).\nIn particular, for r=3 this yields pi_2(x) + pi_4(x) <= pi(x-4) + O(1), recovering and sharpening the classical mod-3 obstruction."
+          },
+          {
+            "id": "Conjecture 2.4",
+            "type": "Conjecture",
+            "name": "Universal mod-q pair-bias inequality",
+            "statement": "Let q >= 3 be squarefree and h_1, h_2 >= 2 be even. Then there exists C(q,h_1,h_2) > 0 and x_0 such that for all x >= x_0:\n|pi_{h_1}(x) - pi_{h_2}(x) - R_{q;h_1,h_2}(x)| <= C(q,h_1,h_2) * x/(log x)^3.\nEquivalently, the sign and size of pi_{h_1}(x) - pi_{h_2}(x) at scale << x/(log x)^2 are governed by the weighted prime-race imbalance R_{q;h_1,h_2}(x)."
+          },
+          {
+            "id": "Conjecture 2.5",
+            "type": "Conjecture",
+            "name": "Concrete Specialization",
+            "statement": "For any q multiple of 6, K_{q,2}-K_{q,4} is supported on classes a with a equiv 1 or 5 (mod 6) and equals -1 on a equiv 1 (mod 6), +1 on a equiv 5 (mod 6). Hence:\nR_{q;2,4}(x) = (1/log x) (pi(x;6,5) - pi(x;6,1)).\nThus (the Universal mod-q pair-bias inequality) predicts that pi_2(x)-pi_4(x) tracks the classical Chebyshev bias between 5 and 1 modulo 6, uniformly across all squarefree moduli q divisible by 6."
+          },
+          {
+            "id": "Conjecture 2.6",
+            "type": "Conjecture",
+            "name": "Exact Triad Identities",
+            "statement": "(I1) B_{6,2}(x) = Delta_6(5;x)/log x, B_{6,4}(x) = Delta_6(1;x)/log x, B_{6,0}(x) = (Delta_6(1;x)+Delta_6(5;x))/log x.\n(I2) Mass-conservation and race-duality:\nB_{6,2}(x) + B_{6,4}(x) = B_{6,0}(x) = -omega_6(x)/log x.\nB_{6,2}(x) - B_{6,4}(x) = (pi(x;6,5)-pi(x;6,1))/log x."
+          },
+          {
+            "id": "Conjecture 2.7",
+            "type": "Conjecture",
+            "name": "Elementary Start/End Class Caps",
+            "statement": "For all x >= 7:\n(C1) Start-side caps: pi_2(x) <= pi(x-2;6,5)+1, pi_4(x) <= pi(x-4;6,1)+1.\n(C2) End-side caps: pi_2(x) <= pi(x;6,1)+1, pi_4(x) <= pi(x;6,5)+1.\n(O) Aggregate Obstruction: pi_2(x) + pi_4(x) <= pi(x-4) + 2."
+          },
+          {
+            "id": "Conjecture 2.8",
+            "type": "Conjecture",
+            "name": "Conjectural Bias-Inequality",
+            "statement": "There exists an absolute C > 0 and x_0 such that for all x >= x_0:\n|pi_2(x) - pi_4(x) - (pi(x;6,5) - pi(x;6,1))/log x| <= C * x/(log x)^3.\nEquivalently, the twin-cousin discrepancy is governed by the explicit prime race between 5 and 1 modulo 6 at amplitude 1/log x, up to a sieve-scale error."
+          },
+          {
+            "id": "Conjecture 2.9",
+            "type": "Conjecture",
+            "statement": "For any modulus q divisible by 6 and all x >= 7:\nF_{q;2,4}(x) = -(omega_q(x) + T_q(x)) / (2 * log x),\nwhere T_q(x) := sum_{a (mod q), gcd(a,q)=1} |Delta_q(a;x)| is the total variation of the centered prime counts across all reduced residue classes modulo q. In particular, F_{q;2,4}(x) <= 0 and becomes more negative as either omega_q(x) or the dispersion T_q(x) increases."
+          },
+          {
+            "id": "Conjecture 2.10",
+            "type": "Conjecture",
+            "name": "Simple Universal Bounds and Equality Cases",
+            "statement": "(B1) Two-sided bounds:\n-(|d(x)| + 2 omega_q(x)) / (2*log x) <= F_{q;2,4}(x) <= -omega_q(x)/log x <= 0,\nwhere d(x) := pi(x;6,5) - pi(x;6,1) (q-independent for q multiple of 6).\n(B2) Sharper sandwich (q=6): With B_{6,0}(x) := -omega_6(x)/log x and R(x) := (pi(x;6,5)-pi(x;6,1))/log x:\nB_{6,0}(x) - |R(x)|/2 <= F_{6;2,4}(x) <= B_{6,0}(x) <= 0."
+          },
+          {
+            "id": "Conjecture 2.11",
+            "type": "Conjecture",
+            "statement": "Define S_q(x) := B_{q,2}(x) + B_{q,4}(x) = -omega_q(x)/log x, and\nD_q(x) := B_{q,2}(x) - B_{q,4}(x) = (pi(x;6,5) - pi(x;6,1) - (omega_q^{(5)}(x) - omega_q^{(1)}(x))) / log x.\nThen B_{q,2}(x) = (S_q(x)+D_q(x))/2 and B_{q,4}(x) = (S_q(x)-D_q(x))/2."
+          },
+          {
+            "id": "Conjecture 2.12",
+            "type": "Conjecture",
+            "name": "Ellipse law",
+            "statement": "(B_{q,2}(x) - S_q(x)/2)^2 + (B_{q,4}(x) - S_q(x)/2)^2 = D_q(x)^2/2.\nIn particular, the pair (B_{q,2}, B_{q,4}) lies on a circle of radius |D_q|/sqrt(2) centered at (S_q/2, S_q/2), so |B_{q,2} - B_{q,4}| = |D_q|."
+          },
+          {
+            "id": "Conjecture 2.13",
+            "type": "Conjecture",
+            "name": "Product identity and bounds",
+            "statement": "4 B_{q,2}(x) B_{q,4}(x) = S_q(x)^2 - D_q(x)^2.\nHence:\n-D_q(x)^2/4 <= B_{q,2}(x) B_{q,4}(x) <= S_q(x)^2/4 = omega_q(x)^2 / (4 log^2 x).\nWriting the total variation T_q(x) := sum_{(a,q)=1} |Delta_q(a;x)|, we have |D_q(x)| <= T_q(x)/log x, so:\n(S_q(x)^2 - (T_q(x)/log x)^2) / 4 <= B_{q,2}(x) B_{q,4}(x) <= S_q(x)^2/4."
+          },
+          {
+            "id": "Conjecture 2.14",
+            "type": "Conjecture",
+            "name": "L^1/L^2 control of the race",
+            "statement": "Let chi_6(a) = +1 on a equiv 5 (mod 6), -1 on a equiv 1 (mod 6), lifted to modulo q.\n|D_q(x)| <= T_q(x)/log x.\n|D_q(x)| <= (1/log x) sqrt(phi(q) * V_q(x)), where V_q(x) := sum_{(a,q)=1} Delta_q(a;x)^2."
+          },
+          {
+            "id": "Conjecture 2.15",
+            "type": "Conjecture",
+            "name": "Sum and max of absolute values",
+            "statement": "|B_{q,2}(x)| + |B_{q,4}(x)| >= max(|S_q(x)|, |D_q(x)|).\n|B_{q,2}(x)| + |B_{q,4}(x)| <= sqrt(S_q(x)^2 + D_q(x)^2).\n(||S_q(x)| - |D_q(x)||) / 2 <= max(|B_{q,2}(x)|, |B_{q,4}(x)|) <= (|S_q(x)| + |D_q(x)|) / 2."
+          },
+          {
+            "id": "Conjecture 2.16",
+            "type": "Conjecture",
+            "name": "One-sided sign constraints and bracketing",
+            "statement": "Since S_q(x) <= 0, at least one of B_{q,2}(x), B_{q,4}(x) is <= 0. Furthermore:\nmin(B_{q,2}(x), B_{q,4}(x)) <= S_q(x)/2 <= max(B_{q,2}(x), B_{q,4}(x))."
+          }
+        ]
+      },
+      {
+        "id": "Conversation 3",
+        "total_conjectures": 8,
+        "incorrect_conjectures": 2,
+        "definitions": [
+          {
+            "id": "Definition 3.1",
+            "type": "Definition",
+            "objects": {
+              "pi_h(x)": "#{p <= x-h : p and p+h are prime} for even h >= 2 with 3 not | h",
+              "r(h)": "unique residue class mod 6 such that p equiv r(h) (mod 6) forces p and p+h (both > 3) to be prime-residue admissible; r(h)=5 if h equiv 2 (mod 6) and r(h)=1 if h equiv 4 (mod 6)",
+              "S_h(x)": "pi(x-h; 6, r(h)) = #{p <= x-h : p prime and p equiv r(h) (mod 6)}",
+              "H_2": "finite subset of {h >= 2 : h equiv 2 (mod 6), 3 not | h}",
+              "H_4": "finite subset of {h >= 2 : h equiv 4 (mod 6), 3 not | h}",
+              "weights_(w_h)": "nonneg weights with sum_{h in H_2} w_h = sum_{h in H_4} w_h = 1"
+            }
+          },
+          {
+            "id": "Definition 3.2",
+            "type": "Definition",
+            "description": "Let q in N with 6|q. For even h >= 2:",
+            "objects": {
+              "pi_h(x)": "#{p <= x-h : p and p+h are prime}",
+              "pi(x;q,a)": "#{p <= x : p prime, p equiv a (mod q)}",
+              "pi_h(x;q,a)": "#{p <= x-h : p equiv a (mod q), p and p+h prime}",
+              "F_5(q)": "{a (mod q) : a equiv 5 (mod 6) and gcd(a,q)=1}",
+              "F_1(q)": "{a (mod q) : a equiv 1 (mod 6) and gcd(a,q)=1}",
+              "Pi_2(x;q)": "sum_{a in F_5(q)} pi_2(x;q,a)",
+              "Pi_4(x;q)": "sum_{a in F_1(q)} pi_4(x;q,a)",
+              "S_5(x;q)": "sum_{a in F_5(q)} pi(x-2;q,a)",
+              "S_1(x;q)": "sum_{a in F_1(q)} pi(x-4;q,a)"
+            }
+          },
+          {
+            "id": "Definition 3.3",
+            "type": "Definition",
+            "description": "Let q be a positive integer with 6|q. For a finite set of even gaps Delta subset 2N with 0 in Delta, write M(Delta) := max Delta.",
+            "objects": {
+              "pi(x;q,a)": "#{p <= x : p prime, p equiv a (mod q)}",
+              "pi_Delta(x;q,a)": "#{p <= x-M(Delta) : p equiv a (mod q) and p+d is prime for all d in Delta}",
+              "F_5(q)": "residues a (mod q) congruent to 5 (mod 6)",
+              "F_1(q)": "residues a (mod q) congruent to 1 (mod 6)",
+              "F_r(Delta;q)": "{a in F_r(q) : gcd(a+d,q)=1 for all d in Delta}, fiber-admissible residue sets for r in {1,5}",
+              "Pi_Delta(x;q,r)": "sum_{a in F_r(Delta;q)} pi_Delta(x;q,a)",
+              "S_r^Delta(x;q)": "sum_{a in F_r(Delta;q)} pi(x-M(Delta);q,a)",
+              "notation": "A(x) <<_{q,Delta} B(x) means |A(x)| <= C(q,Delta) B(x) for some constant C(q,Delta)"
+            }
+          }
+        ],
+        "conjectures": [
+          {
+            "id": "Conjecture 3.1",
+            "type": "Conjecture",
+            "statement": "For all x >= 7:\n|pi_2(x) - pi_4(x)| <= |pi(x;6,5) - pi(x;6,1)|.\nIn particular, the conjecture predicts that the excess of twin over cousin pairs up to x can never exceed the Chebyshev bias between primes equiv 5 and equiv 1 (mod 6).\nQuantitative Refinement (expected under GRH for Dirichlet L-functions mod 6 and Hardy-Littlewood prime-pair asymptotics): There exists absolute K > 0 such that for all x >= 7:\n|pi_2(x) - pi_4(x)| <= K * x^{1/2} / log x."
+          },
+          {
+            "id": "Conjecture 3.2",
+            "type": "Conjecture",
+            "name": "Start-Normalized Mod-6 Parity Inequality",
+            "statement": "There exist absolute constants x_0 >= 7 and C > 0 such that for all x >= x_0:\n|sum_{h in H_2} w_h * pi_h(x)/S_h(x) - sum_{h in H_4} w_h * pi_h(x)/S_h(x)| <= C/log x (1).\nMoreover, for each fixed finite choice of H_2, H_4 and weights, the left-hand side is O((log x)^{-1-delta}) for some delta = delta(H_2,H_4,w) > 0 under GRH for Dirichlet L-functions modulo 6 together with the Hardy-Littlewood prime-pair conjecture for all h in H_2 cup H_4."
+          },
+          {
+            "id": "Conjecture 3.3",
+            "type": "Conjecture",
+            "name": "Special Cases and Corollaries",
+            "statement": "Twin vs cousin (unweighted): take H_2={2}, H_4={4}, w_2=w_4=1, yielding:\n|pi_2(x)/pi(x-2;6,5) - pi_4(x)/pi(x-4;6,1)| <= C/log x.\nSymmetric 2-gap vs 4-gap families: for any m >= 0, with H_2={6j+2 : 0<=j<=m}, H_4={6j+4 : 0<=j<=m} and uniform weights w_h=1/(m+1):\n|(1/(m+1)) sum_{j=0}^m pi_{6j+2}(x)/pi(x-(6j+2);6,5) - (1/(m+1)) sum_{j=0}^m pi_{6j+4}(x)/pi(x-(6j+4);6,1)| <= C/log x.\nA simpler, coarser version is |pi_2(x) - pi_4(x)| <= |pi(x-2;6,5) - pi(x-4;6,1)| + O(1)."
+          },
+          {
+            "id": "Conjecture 3.4",
+            "type": "Conjecture",
+            "name": "Fibered, Start-Normalized Twin-Cousin Near-Equality",
+            "statement": "There exist constants x_0(q) and C(q) > 0 such that for all x >= x_0(q):\n|Pi_2(x;q)/S_5(x;q) - Pi_4(x;q)/S_1(x;q)| <= C(q)/log x (A).\nHeuristically, the left-hand side is expected to be <<_q 1/(log x)^2 after cancellation of the common leading term 4C_2/log x."
+          },
+          {
+            "id": "Conjecture 3.5",
+            "type": "Conjecture",
+            "name": "Coarse, Unnormalized Envelope by Fibered Chebyshev Bias",
+            "statement": "For all x >= 7:\n|Pi_2(x;q) - Pi_4(x;q)| <= |S_5(x;q) - S_1(x;q)| + 1 (B).\nThe +1 accounts for the exceptional pair starting at p=3."
+          },
+          {
+            "id": "Conjecture 3.6",
+            "type": "Conjecture",
+            "name": "Intra-family Fiber Balance for Sexy Pairs and Chains",
+            "statement": "For any finite sexy-chain tuple Delta subset 6N with 0 in Delta (e.g., Delta={0,6}), for all sufficiently large x:\n|Pi_Delta(x;q,1)/S_1^Delta(x;q) - Pi_Delta(x;q,5)/S_5^Delta(x;q)| <<_{q,Delta} 1/log x."
+          },
+          {
+            "id": "Conjecture 3.7",
+            "type": "Conjecture",
+            "name": "Cross-family Coupling Between Complementary Fiber-orientations",
+            "statement": "Let Delta_2, Delta_4 be finite even-gap tuples with 3 not | d for all d in Delta_2 cup Delta_4 forcing starts in fibers 5 and 1 respectively. For any nonneg weights:\n|sum_{d in Delta_2} w_d * Pi_{{0,d}}(x;q,5)/S_5^{{0,d}}(x;q) - sum_{e in Delta_4} v_e * Pi_{{0,e}}(x;q,1)/S_1^{{0,e}}(x;q)| <<_{q,Delta_2,Delta_4} 1/log x."
+          },
+          {
+            "id": "Conjecture 3.8",
+            "type": "Conjecture",
+            "name": "Coarse Bias Envelopes (Unnormalized)",
+            "statement": "For any tuple Delta with both fibers admissible:\n|Pi_Delta(x;q,1) - Pi_Delta(x;q,5)| <<_{q,Delta} |S_1^Delta(x;q) - S_5^Delta(x;q)| + 1."
+          }
+        ]
+      },
+      {
+        "id": "Conversation 4",
+        "total_conjectures": 2,
+        "incorrect_conjectures": 0,
+        "definitions": [
+          {
+            "id": "Definition 4.1",
+            "type": "Definition",
+            "objects": {
+              "Pi_2(x)": "#{p <= x : p and p+2 are prime}, twin-prime counting function",
+              "Pi_4(x)": "#{p <= x : p and p+4 are prime}, cousin-prime counting function",
+              "pi(x;3,a)": "#{p <= x : p is prime and p equiv a (mod 3)} for a in {1,2}",
+              "Delta_pairs(x,y)": "(Pi_2(x+y)-Pi_2(x)) - (Pi_4(x+y)-Pi_4(x))",
+              "Delta_3(x,y)": "(pi(x+y;3,2)-pi(x;3,2)) - (pi(x+y;3,1)-pi(x;3,1))",
+              "C_2": "prod_{p>2} (p(p-2)/(p-1)^2) approx 0.6601618158, twin-prime constant",
+              "lambda(x)": "2C_2 / log x"
+            }
+          }
+        ],
+        "open_directions": [
+          "Prove Conjecture 4.1 under GEH-type hypotheses by adapting dispersion estimates.",
+          "Optimize the exponent theta and constant K.",
+          "Develop a semiprime proxy inequality by relating Delta_3(x,y) to a smoothed residue-class imbalance for Q in (x,x+y]."
+        ],
+        "conjectures": [
+          {
+            "id": "Conjecture 4.1",
+            "type": "Conjecture",
+            "name": "Twin-Cousin Linear Response in Short Intervals",
+            "statement": "There exist absolute constants x_0 >= 10, theta in (0,1), and K > 0 such that for all x >= x_0 and x^theta <= y <= x:\n|Delta_pairs(x,y) - lambda(x) * Delta_3(x,y)| <= K * sqrt(y) / (log x)^2.\nEquivalently, a one-sided form holds:\n|Delta_pairs(x,y)| <= (2C_2/log x) * |Delta_3(x,y)| + K * sqrt(y) / (log x)^2."
+          },
+          {
+            "id": "Conjecture 4.2",
+            "type": "Conjecture",
+            "name": "Cumulative one-variable form",
+            "statement": "For t >= t_0 (sufficiently large):\n|Pi_2(t) - Pi_4(t) - (2C_2/log t) * (pi(t;3,2) - pi(t;3,1))| <= K * sqrt(t) / (log t)^2."
+          }
+        ]
+      },
+      {
+        "id": "Conversation 5",
+        "total_conjectures": 8,
+        "incorrect_conjectures": 0,
+        "definitions": [
+          {
+            "id": "Definition 5.1",
+            "type": "Definition",
+            "objects": {
+              "pi_2(x)": "number of twin-prime pairs (p,p+2) with p+2 <= x",
+              "pi_4(x)": "number of cousin-prime pairs (p,p+4) with p+4 <= x",
+              "Q(x)": "number of semiprimes n <= x (Omega(n)=2, counted with multiplicity)",
+              "Delta_h(x)": "(pi_2(x+h)-pi_2(x)) - (pi_4(x+h)-pi_4(x)), short-interval discrepancy for x >= x_0 and h >= 1"
+            }
+          },
+          {
+            "id": "Definition 5.2",
+            "type": "Definition",
+            "description": "For x >= 2 and h >= 1, let I = (x,x+h]:",
+            "objects": {
+              "pi_2(I)": "#{p in I : p, p+2 are prime}",
+              "pi_4(I)": "#{p in I : p, p+4 are prime}",
+              "P_r(I)": "#{p in I : p equiv r (mod 12)} for r in {1,5,7,11}",
+              "R(I)": "pi_2(I)/pi_4(I) whenever pi_4(I) > 0"
+            }
+          },
+          {
+            "id": "Definition 5.3",
+            "type": "Definition",
+            "description": "Fix modulus 30. Let R={1,7,11,13,17,19,23,29} be the admissible odd prime residues mod 30. For an interval I=(x,x+h]:",
+            "objects": {
+              "P_r(I)": "#{p in I prime : p equiv r (mod 30)} for r in R",
+              "pi_h(I)": "#{p in I prime : p+h in I and p+h is prime} for even gaps h in {2,4,6}",
+              "admissible_starts": {
+                "twin_h2": "starts S_2={11,17,29}, targets T_2={1,13,19}",
+                "cousin_h4": "starts S_4={7,13,19}, targets T_4={11,17,23}",
+                "sexy_h6": "starts S_6={1,7,11,13,17,23}, targets T_6={7,13,17,19,23,29}"
+              },
+              "A_h(I)": "sum_{r in S_h} P_r(I) for each h",
+              "mu_h^-(I)": "min_{s in T_h} P_s(I)",
+              "mu_h^+(I)": "max_{s in T_h} P_s(I)",
+              "T_h(I)": "sum_{r in S_h} P_r(I) P_{r+h}(I)",
+              "elementary_bound": "mu_h^-(I) A_h(I) <= T_h(I) <= mu_h^+(I) A_h(I)"
+            }
+          },
+          {
+            "id": "Definition 5.4",
+            "type": "Definition",
+            "description": "For k >= 2, let Omega(n) be the total number of prime factors of n with multiplicity. For interval I=(x,x+h]:",
+            "objects": {
+              "A_k(n)": "1_{Omega(n)=k}, k-almost-prime indicator",
+              "Pi_{k,g}(I)": "#{n in Z cap I : Omega(n)=k and Omega(n+g)=k} for even gap g",
+              "A_r^{(k,m)}(I)": "#{n in Z cap I : Omega(n)=k and n equiv r (mod m)} for residue r in Z/mZ",
+              "S_g(I)": "{r in Z/mZ : A_r^{(k,m)}(I)>0 and A_{r+g}^{(k,m)}(I)>0}, active starts for even gap g",
+              "A_g^{(k,m)}(I)": "sum_{r in S_g(I)} A_r^{(k,m)}(I)",
+              "mu_g^-(I)": "min_{r in S_g(I)} A_{r+g}^{(k,m)}(I)",
+              "mu_g^+(I)": "max_{r in S_g(I)} A_{r+g}^{(k,m)}(I)",
+              "T_g^{(k,m)}(I)": "sum_{r in S_g(I)} A_r^{(k,m)}(I) * A_{r+g}^{(k,m)}(I), residue-bilinear proxy",
+              "elementary_bound": "mu_g^-(I) * A_g^{(k,m)}(I) <= T_g^{(k,m)}(I) <= mu_g^+(I) * A_g^{(k,m)}(I)"
+            }
+          }
+        ],
+        "conjectures": [
+          {
+            "id": "Conjecture 5.1",
+            "type": "Conjecture",
+            "name": "self-normalized square-root law",
+            "statement": "There exist absolute constants A, B > 0 and theta in (0,1) such that for all x >= x_0 and x^theta <= h <= x:\n|Delta_h(x)| <= A sqrt((pi_2(x+h)-pi_2(x)) + (pi_4(x+h)-pi_4(x))) + B.\nEquivalently, for the normalized counts:\n|(pi_2(x+h)-pi_2(x))/(h/log^2 x) - (pi_4(x+h)-pi_4(x))/(h/log^2 x)| <= A'/sqrt(h/log^2 x) + B'/(h/log^2 x)\nwith absolute A',B'>0, whenever x^theta <= h <= x."
+          },
+          {
+            "id": "Conjecture 5.2",
+            "type": "Conjecture",
+            "name": "semiprime control",
+            "statement": "There exists an absolute constant C > 0 and theta' in (0,1) such that for all x >= x_0 and x^{theta'} <= h <= x:\n|Delta_h(x)| <= C sqrt(Q(x+h) - Q(x))."
+          },
+          {
+            "id": "Conjecture 5.3",
+            "type": "Conjecture",
+            "name": "Residue-ratio sandwich for twin vs. cousin pairs",
+            "statement": "There exists theta in (0,1) and x_0 >= 2 such that for all x >= x_0 and x^theta <= h <= x with pi_4(I) > 0:\nmin{P_1(I)/P_7(I), P_7(I)/P_1(I)} <= R(I) <= max{P_1(I)/P_7(I), P_7(I)/P_1(I)}."
+          },
+          {
+            "id": "Conjecture 5.4",
+            "type": "Conjecture",
+            "name": "Robust form with a universal distortion",
+            "statement": "There exists an absolute kappa >= 1 such that for all such I:\nkappa^{-1} * min{P_1(I)/P_7(I), P_7(I)/P_1(I)} <= R(I) <= kappa * max{P_1(I)/P_7(I), P_7(I)/P_1(I)}."
+          },
+          {
+            "id": "Conjecture 5.5",
+            "type": "Conjecture",
+            "name": "Semiprime proxy variant",
+            "statement": "Let Q_r(I) := #{n in I : n is semiprime and n equiv r (mod 12)}. Then for some theta' in (0,1), x >= x_0', x^{theta'} <= h <= x with pi_4(I) > 0:\nmin{(Q_1(I)/Q_7(I))^{1/2}, (Q_7(I)/Q_1(I))^{1/2}} <= R(I) <= max{(Q_1(I)/Q_7(I))^{1/2}, (Q_7(I)/Q_1(I))^{1/2}}."
+          },
+          {
+            "id": "Conjecture 5.6",
+            "type": "Conjecture",
+            "name": "mod-30 ratio sandwiches for twin, cousin, sexy",
+            "statement": "There exists a universal distortion kappa >= 1 and theta in (0,1) such that for all x >= x_0 and x^theta <= h <= x, the following hold whenever denominators are nonzero. Let R_{h,k}(I) := pi_h(I)/pi_k(I) and define computable bounds:\nL_{h,k}(I) := (mu_h^-(I)/mu_k^+(I)) * (A_h(I)/A_k(I)),\nU_{h,k}(I) := (mu_h^+(I)/mu_k^-(I)) * (A_h(I)/A_k(I)).\nThen for (h,k) in {(2,4),(2,6),(4,6)} one has:\nkappa^{-1} L_{h,k}(I) <= R_{h,k}(I) <= kappa U_{h,k}(I)."
+          },
+          {
+            "id": "Conjecture 5.7",
+            "type": "Conjecture",
+            "name": "Semiprime proxy (prime-free)",
+            "statement": "For Q_r(I) := #{n in I : n is semiprime and n equiv r (mod 30)}, set tilde_P_r(I) := sqrt(Q_r(I)), and define tilde_A_h, tilde_mu_h^+/- analogously. There exists kappa_Q >= 1 such that:\nkappa_Q^{-1} tilde_L_{h,k}(I) <= R_{h,k}(I) <= kappa_Q tilde_U_{h,k}(I),\nwhere tilde_L_{h,k}, tilde_U_{h,k} are defined from tilde_P_r exactly as L_{h,k}, U_{h,k} are from P_r."
+          },
+          {
+            "id": "Conjecture 5.8",
+            "type": "Conjecture",
+            "name": "Residue-shift ratio sandwich for k-almost primes",
+            "statement": "There exists, for each k >= 2 and modulus m, a universal distortion kappa_k(m) >= 1 such that for any interval I=(x,x+h] with Pi_{k,g'}(I) > 0, and any even gaps g,g' (e.g., 2,4,6), the two-variable ratio:\nR_{k;g,g'}(I) := Pi_{k,g}(I) / Pi_{k,g'}(I)\nsatisfies:\nkappa_k(m)^{-1} * L_{k;g,g'}^{(m)}(I) <= R_{k;g,g'}(I) <= kappa_k(m) * U_{k;g,g'}^{(m)}(I),\nwhere the computable envelopes are:\nL_{k;g,g'}^{(m)}(I) := (mu_g^-(I)/mu_{g'}^+(I)) * (A_g^{(k,m)}(I)/A_{g'}^{(k,m)}(I)),\nU_{k;g,g'}^{(m)}(I) := (mu_g^+(I)/mu_{g'}^-(I)) * (A_g^{(k,m)}(I)/A_{g'}^{(k,m)}(I)).\nHeuristic: Pi_{k,g}(I) is comparable to T_g^{(k,m)}(I) (up to kappa_k(m)) because the event {Omega(n)=k, Omega(n+g)=k} factorizes weakly across residue fibers modulo m. The same leading singular weights appear inside each g when restricted to a fixed residue, while their cross-g variation is absorbed into the universal kappa_k(m)."
+          }
+        ]
+      }
+    ]
   }
-}
