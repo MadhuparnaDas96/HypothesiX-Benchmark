@@ -1,39 +1,269 @@
-Reference set R  (n = 10)
-θ bounds: [1, 10] for all features
+Reference set R  (n = 18)
+theta bounds: [1, 10] for all features
 
   Name                                             θ₁  θ₂  θ₃  θ₄  θ₅  θ₆
   ----------------------------------------------------------------------
-  Riemann Hypothesis                               10  10  10  10  10  10 ← ceiling
-  Twin Prime Conjecture                             7   9   8   8   6   4 ← ceiling
-  Hardy–Littlewood Prime k-tuples Conjecture        9  10   9   9   7   4 ← ceiling
-  Elliott–Halberstam Conjecture                     8   8   7   5   6   6
-  Generalized Elliott–Halberstam Conjecture         8   9   6   4   6   6
-  Bateman–Horn Conjecture                          10   9   7   9   6   5
+  Riemann Hypothesis                               10  10  10  10  10  10 <- ceiling
+  Twin Prime Conjecture                             7   9   8   8   6   4
+  Hardy-Littlewood Prime k-tuples Conjecture        9  10   9   9   7   4
+  Elliott-Halberstam Conjecture                     8   8   7   5   6   6
+  Generalized Elliott-Halberstam Conjecture         8   9   6   4   6   6
+  Bateman-Horn Conjecture                          10   9   7   9   6   5
   Dickson's Conjecture                              8   7   8   8   6   4
   Polignac's Conjecture                             6   7   8   9   6   4
   Firoozbakht's Conjecture                          5   7   4   9   3   2
-  Granville's Refinement of Cramér's Conjecture     4   8   5   3   3   2
+  Granville's Refinement of Cramer's Conjecture     4   8   5   3   3   2
+  Hardy-Littlewood Second Conjecture                4   8   5   3   3   2
+  Bunyakovsky Conjecture                            7   7   5   9   4   5
+  Chowla's Conjecture on Prime Correlations         8   9   8   6   7   6
+  Shanks Conjecture on Prime Gaps                   4   5   4   8   4   3
+  Schinzel's Hypothesis H                           9   9   6   7   7   6
+  Legendre's Conjecture                             5   5   6   9   6   4
+  Landau's Fourth Problem (Near-Square Primes)      6   6   7   9   5   5
+  Parity Problem (Selberg's Parity Barrier)         7  10   8   5   7   7
 
 
-=== REFERENCE RANKING (lowest d² = closest to cluster centre) ===
+=== REFERENCE RANKING (lowest d^2 = closest to cluster centre) ===
 
-  Rank         d²       Υ  Name
-  --------------------------------------------------------------
-  1        2.1365  1.0000  Twin Prime Conjecture ← ceiling
-  2        3.8991  0.8889  Elliott–Halberstam Conjecture
-  3        4.0988  0.7778  Polignac's Conjecture
-  4        4.7624  0.6667  Dickson's Conjecture
-  5        5.8155  0.5714  Hardy–Littlewood Prime k-tuples Conjecture ← ceiling
-  6        5.8261  0.4444  Bateman–Horn Conjecture
-  7        5.9684  0.3333  Granville's Refinement of Cramér's Conjecture
-  8        7.0901  0.2222  Firoozbakht's Conjecture
-  9        7.0926  0.1429  Riemann Hypothesis ← ceiling
-  10       7.3099  0.0000  Generalized Elliott–Halberstam Conjecture
+  Rank        d^2   Upsilon  Name
+  -----------------------------------------------------------------
+  1        1.3671    0.0000  Chowla's Conjecture on Prime Correlations
+  2        2.8386    0.0588  Twin Prime Conjecture
+  3        3.3000    0.1176  Polignac's Conjecture
+  4        4.4167    0.1765  Generalized Elliott-Halberstam Conjecture
+  5        4.5940    0.2353  Elliott-Halberstam Conjecture
+  6        5.0593    0.3529  Granville's Refinement of Cramer's Conjecture
+  7        5.0593    0.3529  Hardy-Littlewood Second Conjecture
+  8        5.5015    0.4118  Shanks Conjecture on Prime Gaps
+  9        5.5948    0.4706  Parity Problem (Selberg's Parity Barrier)
+  10       5.7381    0.5294  Bateman-Horn Conjecture
+  11       6.1323    0.5882  Landau's Fourth Problem (Near-Square Primes)
+  12       6.3513    0.6471  Dickson's Conjecture
+  13       6.8698    0.7059  Schinzel's Hypothesis H
+  14       7.0127    0.7647  Firoozbakht's Conjecture
+  15       7.1207    0.8235  Hardy-Littlewood Prime k-tuples Conjecture
+  16       7.6289    0.8824  Bunyakovsky Conjecture
+  17       7.9739    0.9412  Legendre's Conjecture
+  18       9.4408    1.0000  Riemann Hypothesis <- ceiling
 
 --- Calibration ---
-  ⚠ Υ(Riemann Hypothesis) = 0.1429
-  ✓ Υ(Twin Prime Conjecture) = 1.0000
-  ⚠ Υ(Hardy–Littlewood Prime k-tuples Conjecture) = 0.5714
+  [OK] Upsilon(Riemann Hypothesis) = 1.0000
 
 Embedding reference conjectures...
-Embedding 3 theorems as visual landmarks...
+Embedding 13 theorems as visual landmarks...
+Loaded 34 new conjectures.
+Embedding new conjectures...
+
+
+=== NEW CONJECTURE SCORES ===
+
+  Conjecture 1.1
+    theta_hat = [8.04, 8.24, 6.97, 5.07, 6.09, 5.98]
+    d^2       = 3.5046   Upsilon = 0.1667
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.934)
+
+  Conjecture 1.2
+    theta_hat = [8.03, 8.42, 6.87, 4.97, 6.14, 6.0]
+    d^2       = 3.0618   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.918)
+
+  Conjecture 1.3
+    theta_hat = [8.22, 8.92, 7.64, 6.21, 6.8, 5.98]
+    d^2       = 1.0370   Upsilon = 0.0000
+    Closest (hybrid): Chowla's Conjecture on Prime Correlations (sim=0.913)
+
+  Conjecture 1.4
+    theta_hat = [8.81, 8.95, 7.48, 7.58, 6.51, 5.34]
+    d^2       = 1.2594   Upsilon = 0.0000
+    Closest (hybrid): Bateman-Horn Conjecture (sim=0.902)
+
+  Conjecture 1.5
+    theta_hat = [7.72, 9.14, 7.31, 5.11, 6.56, 6.31]
+    d^2       = 1.8176   Upsilon = 0.0556
+    Closest (hybrid): Parity Problem (Selberg's Parity Barrier) (sim=0.904)
+
+  Conjecture 1.6
+    theta_hat = [7.64, 8.68, 6.89, 5.04, 6.07, 5.65]
+    d^2       = 1.6574   Upsilon = 0.0556
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.899)
+
+  Conjecture 1.7
+    theta_hat = [8.05, 8.36, 7.01, 5.21, 6.16, 5.95]
+    d^2       = 2.8451   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.917)
+
+  Conjecture 1.8
+    theta_hat = [8.68, 8.92, 7.5, 7.72, 6.45, 5.22]
+    d^2       = 1.1114   Upsilon = 0.0000
+    Closest (hybrid): Bateman-Horn Conjecture (sim=0.898)
+
+  Conjecture 1.9
+    theta_hat = [8.09, 8.52, 6.99, 5.26, 6.26, 5.99]
+    d^2       = 2.4081   Upsilon = 0.0556
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.914)
+
+  Conjecture 1.10
+    theta_hat = [8.22, 9.05, 7.9, 6.56, 6.93, 5.97]
+    d^2       = 0.8728   Upsilon = 0.0000
+    Closest (hybrid): Chowla's Conjecture on Prime Correlations (sim=0.906)
+
+  Conjecture 2.1
+    theta_hat = [8.3, 8.79, 7.26, 6.16, 6.43, 5.66]
+    d^2       = 1.1495   Upsilon = 0.0000
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.905)
+
+  Conjecture 3.1
+    theta_hat = [4.3, 8.1, 5.21, 3.24, 3.28, 2.29]
+    d^2       = 4.3688   Upsilon = 0.1667
+    Closest (hybrid): Granville's Refinement of Cramer's Conjecture (sim=0.905)
+
+  Conjecture 3.2
+    theta_hat = [8.04, 8.55, 7.14, 5.36, 6.3, 6.04]
+    d^2       = 2.1861   Upsilon = 0.0556
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.915)
+
+  Conjecture 4.1
+    theta_hat = [7.98, 8.54, 6.81, 4.84, 6.15, 6.02]
+    d^2       = 2.8952   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.932)
+
+  Conjecture 4.2
+    theta_hat = [8.01, 8.38, 6.7, 4.73, 6.03, 5.99]
+    d^2       = 3.5619   Upsilon = 0.1667
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.941)
+
+  Conjecture 4.3
+    theta_hat = [8.02, 8.41, 6.9, 4.98, 6.14, 6.01]
+    d^2       = 3.0428   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.930)
+
+  Conjecture 4.4
+    theta_hat = [8.02, 8.45, 6.88, 4.97, 6.15, 6.02]
+    d^2       = 2.9794   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.927)
+
+  Conjecture 4.5
+    theta_hat = [8.0, 8.65, 6.81, 4.87, 6.22, 6.01]
+    d^2       = 2.6322   Upsilon = 0.0556
+    Closest (hybrid): Generalized Elliott-Halberstam Conjecture (sim=0.916)
+
+  Conjecture 4.6
+    theta_hat = [8.02, 8.27, 6.97, 5.06, 6.11, 6.01]
+    d^2       = 3.3794   Upsilon = 0.1667
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.925)
+
+  Conjecture 4.7
+    theta_hat = [8.02, 8.27, 6.99, 5.11, 6.11, 6.0]
+    d^2       = 3.2841   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.927)
+
+  Conjecture 4.8
+    theta_hat = [8.02, 8.33, 6.99, 5.2, 6.13, 5.95]
+    d^2       = 2.9041   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.928)
+
+  Conjecture 4.9
+    theta_hat = [8.04, 8.36, 6.96, 5.09, 6.13, 5.97]
+    d^2       = 3.0539   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.920)
+
+  Conjecture 5.1
+    theta_hat = [6.56, 7.23, 6.76, 8.27, 5.53, 4.33]
+    d^2       = 0.4060   Upsilon = 0.0000
+    Closest (hybrid): Shanks Conjecture on Prime Gaps (sim=0.904)
+
+  Conjecture 5.2
+    theta_hat = [7.86, 8.84, 7.3, 5.68, 6.38, 5.9]
+    d^2       = 1.1337   Upsilon = 0.0000
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.916)
+
+  Conjecture 5.3
+    theta_hat = [8.07, 8.78, 7.24, 5.9, 6.34, 5.74]
+    d^2       = 1.1094   Upsilon = 0.0000
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.919)
+
+  Conjecture 6.1
+    theta_hat = [8.0, 8.52, 6.77, 4.81, 6.14, 6.0]
+    d^2       = 3.0075   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.927)
+
+  Conjecture 6.2
+    theta_hat = [8.0, 8.82, 6.3, 4.32, 6.06, 6.0]
+    d^2       = 3.6216   Upsilon = 0.1667
+    Closest (hybrid): Generalized Elliott-Halberstam Conjecture (sim=0.936)
+
+  Conjecture 6.3
+    theta_hat = [8.0, 8.59, 6.48, 4.48, 6.03, 6.0]
+    d^2       = 3.5456   Upsilon = 0.1667
+    Closest (hybrid): Generalized Elliott-Halberstam Conjecture (sim=0.936)
+
+  Conjecture 6.4
+    theta_hat = [7.97, 8.52, 7.04, 5.1, 6.25, 6.04]
+    d^2       = 2.5210   Upsilon = 0.0556
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.929)
+
+  Conjecture 6.5
+    theta_hat = [8.0, 8.45, 6.98, 5.06, 6.18, 6.01]
+    d^2       = 2.7829   Upsilon = 0.0556
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.930)
+
+  Conjecture 6.6
+    theta_hat = [7.98, 8.79, 6.72, 4.76, 6.23, 6.0]
+    d^2       = 2.5863   Upsilon = 0.0556
+    Closest (hybrid): Generalized Elliott-Halberstam Conjecture (sim=0.929)
+
+  Conjecture 6.7
+    theta_hat = [8.01, 8.39, 6.76, 4.79, 6.07, 5.99]
+    d^2       = 3.4203   Upsilon = 0.1667
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.937)
+
+  Conjecture 6.8
+    theta_hat = [8.01, 8.7, 6.49, 4.51, 6.09, 6.0]
+    d^2       = 3.2894   Upsilon = 0.1111
+    Closest (hybrid): Generalized Elliott-Halberstam Conjecture (sim=0.939)
+
+  Conjecture 6.9
+    theta_hat = [8.01, 8.52, 6.82, 4.86, 6.16, 5.99]
+    d^2       = 2.9455   Upsilon = 0.1111
+    Closest (hybrid): Elliott-Halberstam Conjecture (sim=0.932)
+
+=== FINAL RANKING (highest Upsilon = most non-trivial) ===
+
+  Rank    Upsilon         d^2  Name
+  ----------------------------------------------------------
+  1        0.1667      3.5046  Conjecture 1.1
+  2        0.1667      4.3688  Conjecture 3.1
+  3        0.1667      3.5619  Conjecture 4.2
+  4        0.1667      3.3794  Conjecture 4.6
+  5        0.1667      3.6216  Conjecture 6.2
+  6        0.1667      3.5456  Conjecture 6.3
+  7        0.1667      3.4203  Conjecture 6.7
+  8        0.1111      3.0618  Conjecture 1.2
+  9        0.1111      2.8451  Conjecture 1.7
+  10       0.1111      2.8952  Conjecture 4.1
+  11       0.1111      3.0428  Conjecture 4.3
+  12       0.1111      2.9794  Conjecture 4.4
+  13       0.1111      3.2841  Conjecture 4.7
+  14       0.1111      2.9041  Conjecture 4.8
+  15       0.1111      3.0539  Conjecture 4.9
+  16       0.1111      3.0075  Conjecture 6.1
+  17       0.1111      3.2894  Conjecture 6.8
+  18       0.1111      2.9455  Conjecture 6.9
+  19       0.0556      1.8176  Conjecture 1.5
+  20       0.0556      1.6574  Conjecture 1.6
+  21       0.0556      2.4081  Conjecture 1.9
+  22       0.0556      2.1861  Conjecture 3.2
+  23       0.0556      2.6322  Conjecture 4.5
+  24       0.0556      2.5210  Conjecture 6.4
+  25       0.0556      2.7829  Conjecture 6.5
+  26       0.0556      2.5863  Conjecture 6.6
+  27       0.0000      1.0370  Conjecture 1.3
+  28       0.0000      1.2594  Conjecture 1.4
+  29       0.0000      1.1114  Conjecture 1.8
+  30       0.0000      0.8728  Conjecture 1.10
+  31       0.0000      1.1495  Conjecture 2.1
+  32       0.0000      0.4060  Conjecture 5.1
+  33       0.0000      1.1337  Conjecture 5.2
+  34       0.0000      1.1094  Conjecture 5.3
+
+  Ceiling = 1.0  (Riemann Hypothesis)
